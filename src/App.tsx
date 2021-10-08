@@ -19,7 +19,8 @@ function App() {
     setTodos(newTodos);
   };
   const addTodo: AddTodo = (newTodo) => {
-    setTodos([...todos, { text: newTodo, complete: false }]);
+    newTodo.trim() !== "" &&
+      setTodos([...todos, { text: newTodo, complete: false }]);
   };
   return (
     <div className="App">

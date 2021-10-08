@@ -12,6 +12,7 @@ const AddToDoForm: React.FC<AddToDoFormProps> = ({ addTodo }) => {
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     addTodo(newTodo);
+    setNewTodo("");
   };
   return (
     <div>
