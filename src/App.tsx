@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddToDoForm from "./AddToDoForm";
 import "./App.css";
 import { TodoList } from "./TodoList";
 
@@ -17,8 +18,12 @@ function App() {
     });
     setTodos(newTodos);
   };
+  const addTodo: AddTodo = (newTodo) => {
+    setTodos([...todos, { text: newTodo, complete: false }]);
+  };
   return (
     <div className="App">
+      <AddToDoForm addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} />
     </div>
   );
